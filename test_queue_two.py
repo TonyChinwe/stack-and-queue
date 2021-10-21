@@ -4,15 +4,19 @@ from queue_two import *
 
 class TestQueueTwo(unittest.TestCase):
 
+    def setUp(self):
+        self.queue = Queue()
+
+    def tearDown(self):
+        pass
+
     def test_enqueue(self):
-        queue = Queue()
-        queue.enqueue(3)
-        self.assertEqual(queue.size(), 1)
+        self.queue.enqueue(3)
+        self.assertEqual(self.queue.size(), 1)
 
     def test_dequeue(self):
-        queue = Queue()
-        queue.enqueue(2)
-        self.assertEqual(queue.dequeue(), 2)
+        self.queue.enqueue(2)
+        self.assertEqual(self.queue.dequeue(), 2)
 
 
 if __name__ == "__main__":
